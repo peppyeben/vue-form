@@ -1,0 +1,15 @@
+@mixin transition-ease {
+	transition: all 0.9s ease-in-out;
+}
+
+@mixin transition-ease-input {
+	transition: all 0.5s ease-in-out;
+}
+
+@mixin flex-config ($direction) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: $direction;
+	padding: .3rem;
+}

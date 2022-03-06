@@ -1,0 +1,162 @@
+@import "./variables";
+@import "./resets";
+@import "./mixins";
+
+#app {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	// text-align: center;
+	background: #f4f4f4;
+	width: 70%;
+	margin: 0 auto;
+}
+
+nav {
+	// margin: .3rem 0;
+	width: 100%;
+	@include flex-config(row);
+	justify-content: space-around;
+
+	& > a {
+		width: 30%;
+		text-align: center;
+	}
+}
+
+.form {
+	@include flex-config(column);
+	width: 90%;
+	margin: 0 auto;
+
+	&-container {
+		padding: .15rem 0;
+		width: 100%;
+		@include flex-config(row);
+		background: $primary-color;
+		color: #fff;
+		text-align: left;
+
+		input[type="radio"] {
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	&.radio-input {
+		margin: 0 1rem;
+	}
+}
+
+.container {
+	@include flex-config(row);
+	margin: 0 0 .3rem 0;
+
+	&.btn-container {
+		justify-content: space-around;
+		margin: 0 0 1rem 0;
+	}
+
+	&.question-container {
+		@include flex-config(column);
+		margin: 0 0 1rem 0;
+	}
+
+	& > ul {
+		@include flex-config(column);
+		width: 100%;
+	}
+
+	& > ul > li {
+		list-style-type: none;
+		width: 100%;
+		color: $primary-color;
+		background: #fff;
+		text-align: center;
+		margin: .2rem 0;
+		padding: .3rem;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+	padding: .3rem;
+
+	&.router-link-active {
+		background: #fff;
+	}
+}
+
+.text-input {
+	padding: .3rem;
+	outline: none;
+	border: none;
+	@include transition-ease-input;
+	&:focus {
+		outline: none;
+		border: .2rem solid $primary-color;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		background-color: inherit;
+		@include transition-ease-input;	}
+}
+
+.text-area-input {
+	padding: .3rem;
+	outline: none;
+	border: none;
+	@include transition-ease-input;
+	&:focus {
+		outline: none;
+		border: .1rem solid $primary-color;
+		border-top: none;
+		// border-left: none;
+		// border-right: none;
+		background-color: inherit;
+		@include transition-ease-input;	}
+}
+
+.input-form {
+	@include flex-config(column);
+	padding: .3rem;
+
+	& > * {
+		margin: .4rem 0 0 0;
+		width: 100%;
+	}
+
+	& > .btn {
+		margin: .4rem 0 0 0;
+		width: 100%;
+	}
+}
+
+.btn {
+	background-color: $primary-color;
+	color: #fff;
+	font-weight: 600;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 0.3rem;
+	padding: 0.3rem;
+	margin: 0 0.3rem;
+	@include transition-ease;
+
+	&.btn-submit {
+		width: 70%;
+		margin: .4rem 0;
+	}
+
+	&-add {
+		width: 6.5rem;
+	}
+
+	&:hover {
+		outline: none;
+		border: 0.1rem solid #fff;
+		@include transition-ease;
+	}
+}
